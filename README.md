@@ -20,12 +20,27 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+```
+model.py
+from django.db import models
+from django.contrib import admin
+class Student(models.Model):
+    stu_id=models.IntegerField(primary_key=True)
+    stu_name=models.CharField(max_length=30)
 
+class StudentAdmin(admin.ModelAdmin):
+    list_display=('stu_id','stu_name')# Create your models here.
+admin.py
 
+from django.contrib import admin
+from.models import Student,StudentAdmin
+admin.site.register(Student,StudentAdmin)
+# Register your models here.
+```
 
 ## OUTPUT
 
-Include the screenshot of your admin page.
+![alt text](image.png)
 
 
 ## RESULT
